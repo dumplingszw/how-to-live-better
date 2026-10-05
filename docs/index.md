@@ -27,8 +27,8 @@ features:
     title: 原始文献
     details: 来源可追溯，DOI 与官方文件链接齐全，想深究随时点开原文。
   - icon: 🆓
-    title: 免费 · 公有领域
-    details: 原书采用 Unlicense 公有领域授权，本站内容与构建脚本同样不作任何权利保留。
+    title: 免费 · CC BY 4.0
+    details: 原书正文采用 CC BY 4.0 授权，转载、改编、商用都可以；本站已按许可证要求署名并附上许可证链接。
 ---
 
 ## 全书目录

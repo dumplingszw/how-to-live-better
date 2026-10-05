@@ -1,6 +1,6 @@
 # 关于本书
 
-《高性价比人生指南》是一本开源书，由 [eternity4719/HowToLiveBetter](https://github.com/eternity4719/HowToLiveBetter) 维护，采用 **Unlicense 公有领域授权**。
+《高性价比人生指南》是一本开源书，由 [eternity4719/HowToLiveBetter](https://github.com/eternity4719/HowToLiveBetter) 维护，正文采用 **[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) 授权**。
 
 ## 这本书在做什么
 
@@ -18,7 +18,7 @@
 
 - 正文来源：上游仓库 `book/` 目录（原样复制，未作改写）
 - 构建方式：VitePress 静态站点，可部署到 GitHub Pages 或任意静态托管
-- 授权：内容为公有领域；本站构建代码同样不作任何权利保留
+- 授权：正文按 [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) 授权，本站已署名并标明未改动正文；本站构建代码不作任何权利保留
 
 ## 在线阅读
 

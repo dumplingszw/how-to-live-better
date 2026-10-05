@@ -7,8 +7,8 @@
 ## 这是什么
 
 原书由 [eternity4719/HowToLiveBetter](https://github.com/eternity4719/HowToLiveBetter)
-维护（Unlicense，公有领域），按「性价比」排序，每条写清花掉什么、换回什么、证据多硬，
-只引期刊论文和官方文件。
+维护（[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) 授权），按「性价比」排序，
+每条写清花掉什么、换回什么、证据多硬，只引期刊论文和官方文件。
 
 本仓库不改动原书任何正文，只做两件事：
 
@@ -48,4 +48,8 @@ cp /path/to/HowToLiveBetter/book/*.md docs/
 
 ## 授权
 
-原书内容为 Unlicense（公有领域）。本仓库的构建脚本同样不作任何权利保留。
+原书正文由 [eternity4719/HowToLiveBetter](https://github.com/eternity4719/HowToLiveBetter)
+以 [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) 授权。本站按许可证要求署名并
+附上许可证链接，**未改动任何正文内容**。转载、改编、商用均可，只需同样署名并标明改动。
+
+本仓库的构建脚本（`build.py`、VitePress 配置与工作流）不作任何权利保留。

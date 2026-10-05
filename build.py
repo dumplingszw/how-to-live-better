@@ -604,7 +604,7 @@ def main():
                SCOPE, "".join(jump_opts), total, total))
 
     src_line = '数据来源：<a href="%s" target="_blank" rel="noopener">eternity4719/HowToLiveBetter</a>' % UPSTREAM
-    src_line += '（Unlicense，公有领域）'
+    src_line += '（CC BY 4.0 授权，正文未改动）'
     if rev:
         src_line += '，数据截至 <span style="font-family:var(--mono)">%s</span>%s' % (
             rev, '（%s）' % rev_date if rev_date else '')

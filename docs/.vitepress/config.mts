@@ -138,7 +138,9 @@ export default defineConfig({
     externalLinkIcon: true,
 
     footer: {
-      message: '内容来自 eternity4719/HowToLiveBetter（Unlicense，公有领域）· 构建脚本同作公有领域',
+      // CC BY 4.0 要求：署名 + 许可证链接 + 标明改动（本站未改动正文）
+      message:
+        '正文来自 <a href="https://github.com/eternity4719/HowToLiveBetter" target="_blank" rel="noopener">《高性价比人生指南》</a>，按 <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a> 授权（正文未改动）',
       copyright: '高性价比人生指南',
     },
   },

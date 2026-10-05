@@ -1,0 +1,48 @@
+name: Sync upstream content
+
+on:
+  schedule:
+    # 每天 06:00 北京时间（UTC 22:00）
+    - cron: '0 22 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-upstream
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Clone upstream (eternity4719/HowToLiveBetter)
+        run: git clone --depth 1 https://github.com/eternity4719/HowToLiveBetter.git upstream
+
+      - name: Sync content into docs/
+        run: python scripts/sync_upstream.py --upstream upstream --target docs
+
+      - name: Commit & push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs
+          if git diff --cached --quiet; then
+            echo "NO_CONTENT_CHANGE" >> "$GITHUB_STEP_SUMMARY"
+          else
+            git commit -m "chore: sync upstream content $(date -u +%Y-%m-%d)"
+            git push
+            echo "CONTENT_SYNCED" >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Summary
+        run: |
+          echo "## 同步结果" >> "$GITHUB_STEP_SUMMARY"
+          cat "$GITHUB_STEP_SUMMARY"

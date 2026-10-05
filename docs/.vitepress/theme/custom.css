@@ -1,0 +1,145 @@
+/* 高性价比人生指南 · 条目卡片化样式 */
+
+/* ===== 条目卡片 ===== */
+.hltb-card {
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 12px;
+  padding: 16px 18px 14px;
+  margin: 14px 0;
+  background: var(--vp-c-bg-elv);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.hltb-card:hover {
+  border-color: var(--vp-c-brand-1);
+}
+
+.hltb-head {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+.hltb-num {
+  flex: none;
+  min-width: 26px;
+  height: 26px;
+  padding: 0 7px;
+  border-radius: 7px;
+  background: var(--vp-c-bg-mute);
+  color: var(--vp-c-text-3);
+  font: 600 13px/26px var(--vp-font-family-base);
+  text-align: center;
+}
+.hltb-head h3 {
+  margin: 0;
+  font-size: 16.5px;
+  font-weight: 600;
+  line-height: 1.55;
+  letter-spacing: -0.1px;
+  color: var(--vp-c-text-1);
+}
+
+/* ===== 徽章与标签 ===== */
+.hltb-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 10px 0 12px 36px;
+}
+.hltb-badge {
+  font: 500 11.5px/1 var(--vp-font-family-base);
+  padding: 4px 9px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+}
+.hltb-badge.gA { background: var(--vp-c-green-soft); color: var(--vp-c-green-1); border-color: var(--vp-c-green-soft); }
+.hltb-badge.gB { background: var(--vp-c-yellow-soft); color: var(--vp-c-yellow-1); border-color: var(--vp-c-yellow-soft); }
+.hltb-badge.gC { background: var(--vp-c-gray-soft); color: var(--vp-c-gray-1); border-color: var(--vp-c-gray-soft); }
+.hltb-badge.r0 { background: var(--vp-c-brand-soft); color: var(--vp-c-brand-1); border-color: var(--vp-c-brand-soft); }
+.hltb-badge.r1 { background: var(--vp-c-green-soft); color: var(--vp-c-green-1); border-color: var(--vp-c-green-soft); }
+.hltb-badge.r2 { background: var(--vp-c-gray-soft); color: var(--vp-c-gray-1); border-color: var(--vp-c-gray-soft); }
+.hltb-tag {
+  font: 400 11.5px/1 var(--vp-font-family-base);
+  padding: 4px 9px;
+  border-radius: 999px;
+  background: var(--vp-c-bg-mute);
+  color: var(--vp-c-text-3);
+}
+
+/* ===== 说人话高亮块 ===== */
+.hltb-plain {
+  margin: 0 0 10px 36px;
+  padding: 11px 14px;
+  background: var(--vp-c-brand-soft);
+  border-left: 3px solid var(--vp-c-brand-1);
+  border-radius: 0 8px 8px 0;
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--vp-c-text-1);
+}
+
+/* ===== 字段键值行 ===== */
+.hltb-fields {
+  margin-left: 36px;
+}
+.hltb-f {
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  gap: 10px;
+  padding: 7px 0;
+  border-top: 1px solid var(--vp-c-divider);
+  font-size: 13.5px;
+  line-height: 1.75;
+  color: var(--vp-c-text-2);
+}
+.hltb-f b {
+  font-weight: 500;
+  color: var(--vp-c-text-3);
+  font-size: 12.5px;
+  padding-top: 2px;
+}
+.hltb-f.note b { color: var(--vp-c-yellow-1); }
+.hltb-f > div { min-width: 0; overflow-wrap: anywhere; }
+
+/* ===== 来源折叠 ===== */
+.hltb-src {
+  margin: 10px 0 0 36px;
+  border-top: 1px solid var(--vp-c-divider);
+  padding-top: 8px;
+}
+.hltb-src summary {
+  cursor: pointer;
+  font-size: 12.5px;
+  color: var(--vp-c-text-3);
+  list-style: none;
+  user-select: none;
+}
+.hltb-src summary::-webkit-details-marker { display: none; }
+.hltb-src summary::before { content: '▸ '; color: var(--vp-c-text-3); }
+.hltb-src[open] summary::before { content: '▾ '; }
+.hltb-src summary:hover { color: var(--vp-c-brand-1); }
+.hltb-sbody {
+  font-size: 12.5px;
+  line-height: 1.8;
+  color: var(--vp-c-text-2);
+  padding: 8px 0 2px;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+/* ===== 章节引言（口径） ===== */
+.vp-doc h1 + p {
+  color: var(--vp-c-text-2);
+  font-size: 14px;
+  padding-left: 12px;
+  border-left: 2px solid var(--vp-c-divider);
+}
+
+/* ===== 手机端适配 ===== */
+@media (max-width: 640px) {
+  .hltb-card { padding: 14px 14px 12px; border-radius: 10px; margin: 10px 0; }
+  .hltb-head h3 { font-size: 15px; }
+  .hltb-chips, .hltb-plain, .hltb-fields, .hltb-src { margin-left: 0; }
+  .hltb-plain { font-size: 14.5px; padding: 9px 12px; }
+  .hltb-f { font-size: 13px; grid-template-columns: 44px 1fr; gap: 8px; }
+  .hltb-num { min-width: 22px; height: 22px; font-size: 11px; line-height: 22px; }
+}

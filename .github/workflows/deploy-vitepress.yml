@@ -21,6 +21,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          # lastUpdated 要读每个文件的最后一次提交时间，浅克隆会让全书显示同一个日期
+          fetch-depth: 0
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -33,6 +36,14 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+
+      # 单文件离线版（仓库根的 index.html，由 rebuild.yml 每日重建）放进 public/，
+      # 构建时会复制进站点，线上即可通过 /legacy.html 打开。
+      # 这样仓库里不必再存一份 2.3MB 的副本，也不会出现两份内容不同步。
+      - name: Stage legacy single-file page
+        run: |
+          mkdir -p docs/public
+          cp index.html docs/public/legacy.html
 
       - name: Build
         run: npm run build

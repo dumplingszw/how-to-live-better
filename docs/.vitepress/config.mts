@@ -39,7 +39,17 @@ const chapters = [
   ['34-家里的常备药别吃出事', '家里的常备药别吃出事'],
 ]
 
+// GitHub Pages 把本站部署在子路径 /how-to-live-better/ 下，构建产物里的绝对路径必须
+// 带上这个前缀。少了它，/assets/*.js 会被解析到域名根（dumplingszw.github.io/assets/…）
+// 而 404 —— 结果是样式全丢、侧边栏/搜索/明暗切换全部失效。
+// 本地 dev 与预览站保持根路径；需要时可用 SITE_BASE 覆盖。
+const siteBase =
+  process.env.SITE_BASE ??
+  (process.env.GITHUB_ACTIONS ? '/how-to-live-better/' : '/')
+
 export default defineConfig({
+  base: siteBase,
+
   lang: 'zh-CN',
   title: '高性价比人生指南',
   description: '开源书《高性价比人生指南》在线阅读站：34 节、600+ 条建议，每条标注成本、收益、证据等级与原始文献。',
@@ -55,7 +65,8 @@ export default defineConfig({
 
   head: [
     ['meta', { name: 'theme-color', content: '#3451b2' }],
-    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
+    // head 里的链接不会自动加 base，必须自己拼上前缀
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: `${siteBase}favicon.svg` }],
   ],
 
   themeConfig: {
@@ -63,6 +74,7 @@ export default defineConfig({
     nav: [
       { text: '阅读指南', link: '/01-不要早死' },
       { text: '关于本书', link: '/about' },
+      { text: '单文件离线版', link: '/legacy.html', target: '_blank' },
       { text: '上游仓库', link: 'https://github.com/eternity4719/HowToLiveBetter' },
     ],
 

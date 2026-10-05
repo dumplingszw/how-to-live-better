@@ -22,5 +22,6 @@
 
 ## 在线阅读
 
-- 原版单文件阅读页：<https://cdyforever.github.io/how-to-live-better/>
+- 本站（VitePress 多页版）：<https://dumplingszw.github.io/how-to-live-better/>
+- 单文件离线版（零依赖，可存本地/离线读）：<https://dumplingszw.github.io/how-to-live-better/legacy.html>
 - 上游原书仓库：<https://github.com/eternity4719/HowToLiveBetter>
